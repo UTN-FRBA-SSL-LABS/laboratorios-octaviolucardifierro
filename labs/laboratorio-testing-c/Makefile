@@ -22,7 +22,7 @@ test:
 cobertura: src/carrito.c tests/test_unitarios.c
 	$(CC) $(CFLAGS) --coverage $^ -o test_cobertura
 	./test_cobertura
-	gcov src/carrito.c
+	gcov -o . src/carrito.c
 
 # ── Limpieza ──────────────────────────────────────────────────────────────────
 clean:
