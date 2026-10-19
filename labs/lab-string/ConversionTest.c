@@ -17,7 +17,15 @@ int main(void) {
     assert(ToInteger("-7") == -7);
     assert(ToInteger("100") == 100);
 
-    /* ── Operacion libre — agregar tests aca ────────────────────────────── */
+    /* ── Operacion libre: IsInteger ─────────────────────────────────────── */
+    assert(IsInteger("0") == 1);
+    assert(IsInteger("42") == 1);
+    assert(IsInteger("-7") == 1);
+    assert(IsInteger("12a") == 0);
+    assert(IsInteger("+5") == 0);   /* solo se admite '-' como signo */
+    assert(IsInteger("") == 0);     /* borde: cadena vacia */
+    assert(IsInteger("-") == 0);    /* borde: signo sin digitos */
+    assert(IsInteger("--1") == 0);  /* borde: doble signo */
 
     return 0;
 }
